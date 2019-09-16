@@ -57,3 +57,32 @@ For checking the version of nodeJs and npm run the following commands in termina
 nodejs -v
 npm -v
 ```
+
+##### Laravel Project Dependencies
+
+Go insode of your laravel project directory and install the following dependencies :
+
+_**socket.io**_
+```php
+npm install socket.io --save
+```
+
+To check, if installed, type in:
+```php
+npm list socket.io
+```
+
+_**ioredis**_
+```php
+npm install ioredis --save
+```
+
+To check, if installed, type in:
+```php
+npm list ioredis
+```
+
+Next install predis package of laravel
+```php
+composer require predis/predis
+```
