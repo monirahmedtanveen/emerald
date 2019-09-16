@@ -8,14 +8,27 @@ For successfull implementation of socketio some backend application need to be r
 - **Redis Server**
 - **NodeJs & npm**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+##### Redis Server Installation
 
-    Simple, fast routing engine.
-    Powerful dependency injection container.
-    Multiple back-ends for session and cache storage.
-    Expressive, intuitive database ORM.
-    Database agnostic schema migrations.
-    Robust background job processing.
-    Real-time event broadcasting.
+**For Windows Environment,** go to this link :- [redis server](https://github.com/microsoftarchive/redis/releases) and download Redis-x64-3.0.504.zip file. After download unzip it and run the redis-server.exe.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications
+**For Linux Environment,** command to install redis server :-
+Update the apt-get packages :-
+```php
+sudo apt-get update
+```
+
+Next run below command from the terminal to install Redis on your machine :-
+```php
+sudo apt-get install redis-server
+```
+
+Next is to enable Redis to start on system boot. Also restart Redis service once.
+```php
+sudo systemctl enable redis-server.service
+```
+
+**Install Redis PHP Extension :**  if you need to use Redis from PHP application, you also need to install Redis PHP extension on your Ubuntu system. In our case it is mandatory. Run below command to install:
+```php
+sudo apt-get install php-redis
+```
