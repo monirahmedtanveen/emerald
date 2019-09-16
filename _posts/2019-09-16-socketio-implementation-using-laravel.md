@@ -86,3 +86,12 @@ Next install predis package of laravel
 ```php
 composer require predis/predis
 ```
+
+##### Setup Broadcasting Driver
+
+Go insode of your laravel project directory and open .env file and setup the broadcasting driver.
+```php
+BROADCAST_DRIVER=redis
+```
+
+#####
