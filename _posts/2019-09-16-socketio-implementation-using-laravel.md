@@ -10,7 +10,7 @@ For successfull implementation of socketio some backend application need to be r
 
 ##### Redis Server Installation
 
-**For Windows Environment,** go to this link :- [redis server](https://github.com/microsoftarchive/redis/releases) and download Redis-x64-3.0.504.zip file. After download unzip it and run the redis-server.exe.
+**For Windows Environment,** go to this link :- [redis server](https://github.com/microsoftarchive/redis/releases) and download _**Redis-x64-3.0.504.zip**_ file. After download unzip it and run the _**redis-server.exe**_.
 
 **For Linux Environment,** command to install redis server :-
 
@@ -89,9 +89,7 @@ composer require predis/predis
 
 ##### Setup Broadcasting Driver
 
-Go insode of your laravel project directory and open .env file and setup the broadcasting driver.
+Go insode of your laravel project directory and open _**.env**_ file and setup the broadcasting driver.
 ```php
 BROADCAST_DRIVER=redis
 ```
-
-#####
