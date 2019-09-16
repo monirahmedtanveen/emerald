@@ -16,22 +16,22 @@ For successfull implementation of socketio some backend application need to be r
 
 Update the apt-get packages :-
 ```php
-"sudo apt-get update"
+sudo apt-get update
 ```
 
 Next run below command from the terminal to install Redis on your machine :-
 ```php
-"sudo apt-get install redis-server"
+sudo apt-get install redis-server
 ```
 
 Next is to enable Redis to start on system boot. Also restart Redis service once.
 ```php
-"sudo systemctl enable redis-server.service"
+sudo systemctl enable redis-server.service
 ```
 
 **Install Redis PHP Extension :**  if you need to use Redis from PHP application, you also need to install Redis PHP extension on your Ubuntu system. In our case it is mandatory. Run below command to install:
 ```php
-"sudo apt-get install php-redis"
+sudo apt-get install php-redis
 ```
 
 **Test Connection to Redis Server :-**
@@ -42,4 +42,18 @@ command :- "redis-cli"
 output :- 127.0.0.1:6379>
 command :- "ping"
 output :- PONG (It output PONG if connection successful)
+```
+
+##### NodeJs & npm
+
+Command to install nodeJs & npm on linux environment :
+```php
+sudo apt-get install nodejs
+sudo apt-get install npm
+```
+
+For checking the version of nodeJs and npm run the following commands in terminal:
+```php
+nodejs -v
+npm -v
 ```
