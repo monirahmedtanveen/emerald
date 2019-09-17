@@ -94,7 +94,62 @@ Go insode of your laravel project directory and open _**.env**_ file and setup t
 BROADCAST_DRIVER=redis
 ```
 
-If you are using laravel 6.*, then you need to set the REDIS_CLIENT to predis in config/database.php.
+If you are using laravel 6.*, then you need to set the REDIS_CLIENT to predis in config/database.php. By default its set to phpredis.
 ```php
 'client' => env('REDIS_CLIENT', 'predis'),
 ```
+
+##### Creating Larevel Event For Broadcasting Any Event
+
+Inside of your laravel project run the following command in terminal to create an event called UserBroadcast(it can be anything).
+```php
+php artisan make:event UserBroadcast
+```
+The event class will be placed into app/Events folder. After creating the event you have to implement ShouldBroadcastNow in UserBroadcast.
+```php
+class UserBroadcast implements ShouldBroadcastNow
+```
+Below is the full UserBroadcast event.
+```php
+<?php
+
+namespace App\Events;
+
+use App\User;
+use Illuminate\Broadcasting\Channel;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Broadcasting\PresenceChannel;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
+
+class UserBroadcast implements ShouldBroadcastNow
+{
+    use Dispatchable, InteractsWithSockets, SerializesModels;
+
+    public $user;
+
+    /**
+     * Create a new event instance.
+     *
+     * @return void
+     */
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * Get the channels the event should broadcast on.
+     *
+     * @return \Illuminate\Broadcasting\Channel|array
+     */
+    public function broadcastOn()
+    {
+        return new Channel('user-channel');
+    }
+}
+
+```
+In this event I created a channel called user-channel in which data will be broadcast.
