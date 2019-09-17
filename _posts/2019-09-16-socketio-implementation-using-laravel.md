@@ -150,6 +150,56 @@ class UserBroadcast implements ShouldBroadcastNow
         return new Channel('user-channel');
     }
 }
-
 ```
-In this event I created a channel called user-channel in which data will be broadcast.
+In this event I created a channel called user-channel in which data will be broadcasted.
+
+##### Creating Controller Class and Api Route to Fire the UserBroadcast Event
+
+Run the following command in terminal to create a controller called UserController(it can be anything).
+```php
+php artisan make:controller Api/V100/UserController
+```
+Here is the full UserController
+```php
+<?php
+
+namespace App\Http\Controllers\Api\V100\user;
+
+use App\User;
+use Illuminate\Http\Request;
+use App\Events\UserBroadcast;
+use App\Http\Controllers\Controller;
+
+class UserController extends Controller
+{
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $rules = [
+            'name' => 'required',
+            'email' => 'required|email',
+        ];
+        $this->validate($request, $rules);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt('qwerty'),
+        ]);
+
+        /** Created User Broadcast Event */
+        try {
+            event(new UserBroadcast($user));
+        } catch (\Exception $e) {
+            /** Do Nothing */
+        }
+
+        return ["data" => $user];
+    }
+}
+```
