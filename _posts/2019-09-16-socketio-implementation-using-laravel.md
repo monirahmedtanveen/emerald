@@ -93,3 +93,8 @@ Go insode of your laravel project directory and open _**.env**_ file and setup t
 ```php
 BROADCAST_DRIVER=redis
 ```
+
+If you are using laravel 6.*, then you need to set the REDIS_CLIENT to predis in config/database.php.
+```php
+'client' => env('REDIS_CLIENT', 'predis'),
+```
