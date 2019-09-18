@@ -426,7 +426,7 @@ I use laravel root link for client side webpage for listening and proccessing th
             </div>
         </div>
 
-        {{-- scripts --}}
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script>
         <script>
