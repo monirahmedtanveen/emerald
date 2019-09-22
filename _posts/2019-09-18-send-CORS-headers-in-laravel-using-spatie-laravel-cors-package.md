@@ -71,4 +71,20 @@ Then migrate this table using following command
 php artisan migrate
 ```
 
-It will create a "users" table in your database. Now after creating the database tables, let us create a responser trait. Create a file called 'ApiResponser.php' in 'app\Traits' folder. 
+It will create a "users" table in your database. Now after creating the database tables, let us create a responser trait. Create a file called 'ApiResponser.php' in 'app\Traits' folder. Bellow is the full code of ApiResponser.php file
+
+```php
+<?php
+
+namespace App\Traits;
+
+use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Model;
+
+
+trait ApiResponser {
+    protected function showAll (Collection $collection, $code = 200) {
+        return $this->successResponse(['data' => $collection], $code);
+    }
+}
+```
