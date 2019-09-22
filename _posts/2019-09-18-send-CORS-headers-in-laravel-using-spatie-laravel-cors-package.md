@@ -69,4 +69,6 @@ Then migrate this table using following command
 
 ```php
 php artisan migrate
-``` 
+```
+
+It will create a "users" table in your database. Now after creating the database tables, let us create a responser trait. Create a file called 'ApiResponser.php' in 'app\Traits' folder. 
