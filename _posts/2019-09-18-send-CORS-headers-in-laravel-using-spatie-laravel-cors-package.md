@@ -324,4 +324,4 @@ At first create a index.html file inside the 'laravel-cors\fronend' folder. Here
 
 This page will look like this
 
-![website image]({{site.baseurl}}/_posts/Screenshot_147.png)
+![website image](https://raw.githubusercontent.com/monirahmedtanveen/monir.log/master/_posts/Screenshot_147.png)
