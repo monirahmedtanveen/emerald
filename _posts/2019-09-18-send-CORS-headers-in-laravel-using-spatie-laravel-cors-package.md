@@ -7,7 +7,7 @@ This is an application which have laravel backend and jQuery frontend. In this a
 
 ##### Creating Backend Api
 
-In this section I will create an api called "users" which will fetch all the user from the database. For creating this api at first install a freash laravel project into a folder called "laravel-cors".
+In this section I will create an api called "users" which will fetch all the user from the database. For creating this api at first install a freash laravel project into a folder called 'laravel-cors'.
 
 ```php
 composer create-project --prefer-dist laravel/laravel backend
@@ -269,3 +269,59 @@ Route::resource("users", "user\UserController", ["only" => ["index"]]);
 It is a GET api which will return all user data as json encoded form.
 
 ![Screenshot_147.png](https://raw.githubusercontent.com/monirahmedtanveen/monir.log/master/_posts/Screenshot_147.png)
+
+##### Creating Frontend Website
+
+In this section I will create website which will make a GET request to 'backend/api/v1.0.0/users' api for getting the user data and list all the user data in a table.
+
+At first create a index.html file inside the 'laravel-cors\fronend' folder. Here is code of index.html file
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0" name="viewport">
+	<meta property="og:title" content="You Title" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="Your-Image-Url" />
+	<meta property="og:description" content="Your Description" />
+	<title>Laravel Cors - User Data</title>
+
+</head>
+<body>
+	<button onclick="loadData();" id="btnLoad">Load Data</button>
+	<button onclick="clearData();" id="btnClear">Clear Data</button>
+	<div id="data">
+			click load data button to load user data
+	</div>
+
+	<div>
+		<h3>User List</h3>
+		<table border="1" style="text-align: center">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Mobile</th>
+					<th>Address</th>
+				</tr>
+			</thead>
+
+			<tbody id="tablebody">
+				<tr id="rowmsg">
+					<td colspan="4">No data to show</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/scripts.js"></script>
+</body>
+</html>
+```
+
+This page will look like this
+
+![website image]({{site.baseurl}}/_posts/Screenshot_147.png)
