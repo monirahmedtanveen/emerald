@@ -333,7 +333,6 @@ If I click on the 'Load Data' button, it will triggered en event loadData() whic
 
 Now let us write the loadData() function. Create a script.js file inside the 'laravel-cors\fronend\js' folder. Here is the code of script.js file. It will send a GET request to 'backend/api/v1.0.0/users' api and list all the data to the table of index.html file.
 
-<pre>
 ```js
 function loadData(){
 	url = "http://localhost:8000/api/v1.0.0/users";
@@ -387,4 +386,3 @@ function clearData(){
 	$("#tablebody").html("<tr id='rowmsg'><td colspan='4'>No data to show</td></tr>");
 }
 ```
-</pre>
