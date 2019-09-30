@@ -324,7 +324,8 @@ At first create a index.html file inside the 'laravel-cors\fronend' folder. Here
 
 This page will look like this
 
-![website image](https://raw.githubusercontent.com/monirahmedtanveen/monir.log/master/_posts/Screenshot_147.png)
+![webpage image](https://raw.githubusercontent.com/monirahmedtanveen/monir.log/master/_posts/webpage.png)
+
 
 If I click on the 'Load Data' button, it will triggered en event loadData() which is responsible for making GET request to 'backend/api/v1.0.0/users'.
 
