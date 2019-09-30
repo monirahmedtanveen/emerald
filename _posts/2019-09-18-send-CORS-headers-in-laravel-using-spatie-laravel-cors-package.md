@@ -77,7 +77,7 @@ Then migrate this table using following command
 php artisan migrate
 ```
 
-It will create a "users" table in your database. Now it's time for generating some dummy user data in users table. The seed code for creating dummy user placed in DatabaseSeeder.php file. This file located in 'database\seeds' folder. Bellow is the seed code of DatabaseSeeder file
+It will create a "users" table in your database. Now it's time for generating some dummy user data in users table. The seed code for creating dummy user placed in DatabaseSeeder.php file. This file is located in 'database\seeds' folder. Bellow is the seed code of DatabaseSeeder file
 
 ```php
 <?php
@@ -107,6 +107,12 @@ class DatabaseSeeder extends Seeder
         }
     }
 }
+```
+
+Now seed the user table by running bellow command
+
+```php
+php artisan db:seed
 ```
 
 Now after creating the database tables and seed some dummy users, let us create a responser trait. Create a file called 'ApiResponser.php' in 'app\Traits' folder. Bellow is the full code of ApiResponser.php file
