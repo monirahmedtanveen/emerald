@@ -94,3 +94,48 @@ trait ApiResponser {
     }
 }
 ```
+
+After that create a controller named 'ApiController' in 'app\Http\Controllers\Api\V100' folder. This controller will extend the 'app\Http\Controllers\Controller' class and use the 'app\Traits\ApiResponser' trait. Below is the full code of ApiController class
+
+```php
+<?php
+
+namespace App\Http\Controllers\Api\V100;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Traits\ApiResponser;
+
+class ApiController extends Controller
+{
+    use ApiResponser;
+}
+```
+
+Now create a controller named 'UserController' in 'app\Http\Controllers\Api\V100\user' folder. UserController will extend the 'app\Http\Controllers\Api\V100\ApiController' class. Next create index function inside the UserController which will fetch all the user data from the users table of database. Here is the code of UserController
+
+```php
+<?php
+
+namespace App\Http\Controllers\Api\V100\user;
+
+use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\Api\V100\ApiController;
+
+class UserController extends ApiController
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $users = User::get();
+
+        return $this->showAll($users);
+    }
+}
+```
