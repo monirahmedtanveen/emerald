@@ -281,7 +281,9 @@ At first create a index.html file inside the 'laravel-cors\fronend' folder. Here
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0" name="viewport">
+	<meta content="width=device-width,
+    initial-scale=1.0,maximum-scale=1.0"
+    name="viewport">
 	<meta property="og:title" content="You Title" />
 	<meta property="og:type" content="website" />
 	<meta property="og:image" content="Your-Image-Url" />
