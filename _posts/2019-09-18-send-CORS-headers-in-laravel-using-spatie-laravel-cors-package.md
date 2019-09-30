@@ -65,6 +65,12 @@ class CreateUsersTable extends Migration
 }
 ```
 
+Before migration it is need to add bellow statement on boot method of app\Providers\AppServiceProvider
+
+```php
+Schema::defaultStringLength(191);
+```
+
 Then migrate this table using following command
 
 ```php
