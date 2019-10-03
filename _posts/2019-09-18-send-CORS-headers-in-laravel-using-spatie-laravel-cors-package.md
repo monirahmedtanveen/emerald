@@ -394,3 +394,22 @@ By following the above instruction I have created two different origing sharing 
 ![cors blocking](https://raw.githubusercontent.com/monirahmedtanveen/monir.log/master/_posts/2-cors-block.png)
 
 When I click to the Load Button, instead of giving the data, the browser returns with CORS error. So I need to allow the frontend for sharing data with backend. I'm using <a href="https://github.com/spatie/laravel-cors">spatie/laravel-cors</a> Package to solve this issue.
+
+##### Installing <a href="https://github.com/spatie/laravel-cors">spatie/laravel-cors</a> Package
+
+For installing <a href="https://github.com/spatie/laravel-cors">spatie/laravel-cors</a> Package, you have to run the following command into your laravel project.
+
+```php
+composer require spatie/laravel-cors
+```
+
+The package will automatically register its service provider. The provided Spatie\Cors\Cors middleware must be registered in the global middleware group.
+
+In 'app/Http/Kernel.php' register the middleware:
+
+```php
+protected $middleware = [
+    ...
+    \Spatie\Cors\Cors::class
+];
+```
