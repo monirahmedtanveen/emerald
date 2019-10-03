@@ -392,3 +392,5 @@ function clearData(){
 By following the above instruction I have created two different origing sharing data. One is backend which will give response of all user data and another is frontend which will receive the user data from the backend by making GET request. But in the browser CORS policy will block the fronend request as the backend has not specified which origins are permitted for sharing data with the backend. Here is the picture of CORS policy blocking fronend GET request
 
 ![cors blocking](https://raw.githubusercontent.com/monirahmedtanveen/monir.log/master/_posts/2-cors-block.png)
+
+When I click to the Load Button, instead of giving the data, the browser returns with CORS error. So I need to allow the frontend for sharing data with backend. I'm using <a href="https://github.com/spatie/laravel-cors">spatie/laravel-cors</a> Package to solve this issue.
