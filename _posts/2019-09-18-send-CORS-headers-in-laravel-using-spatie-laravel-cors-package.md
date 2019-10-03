@@ -505,7 +505,7 @@ After installing this middleware the Backend API routes should now get appropria
 
 After successfully installing and configuring the <a href="https://github.com/spatie/laravel-cors">spatie/laravel-cors</a> Package, the Backend now allow the Frontend to have its data. Here is the picture of solving CORS header issue
 
-![working-demo]({{site.baseurl}}/_posts/3-demo.png)
+![working-demo](https://raw.githubusercontent.com/monirahmedtanveen/monir.log/master/_posts/3-demo.png)
 
 ##### Source Code
 
