@@ -268,7 +268,7 @@ Route::resource("users", "user\UserController", ["only" => ["index"]]);
 
 It is a GET api which will return all user data as json encoded form.
 
-![Screenshot_147.png](https://raw.githubusercontent.com/monirahmedtanveen/monir.log/master/_posts/Screenshot_147.png)
+![postman Image]({{site.baseurl}}/_posts/1.png)
 
 ##### Creating Frontend Website
 
