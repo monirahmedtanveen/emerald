@@ -484,3 +484,19 @@ return [
     ],
 ];
 ```
+
+After installing this middleware the Backend API routes should now get appropriate CORS headers. The default configuration of this package allows all requests from any origin (denoted as '*'). If you want to specify some origins relevant to your project, lets say If you want to allow requests to come in from https://spatie.be and https://laravel.com add those domains to the config file:
+
+```php
+// config/cors.php
+
+    ...
+    'default_profile' => [
+
+    'allow_origins' => [
+        'https://spatie.be',
+        'https://laravel.com',
+    ],
+    ...
+...
+```
