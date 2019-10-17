@@ -58,3 +58,17 @@ protected $signature = 'send:email';
 */
 protected $description = 'Sending a notification email about task to all users';
 ```
+
+Now its time to register the 'send:email' command in app\Console\Kernel.php file.
+
+```php
+/**
+* The Artisan commands provided by your application.
+*
+* @var array
+*/
+protected $commands = [
+   ...
+   'App\Console\Commands\SendEmailToUser',
+];
+```
