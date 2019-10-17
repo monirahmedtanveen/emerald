@@ -85,4 +85,4 @@ protected function schedule(Schedule $schedule)
 
 Now, if you run the php artisan list command in the terminal, you will see your command has been registered. You will be able to see the command name with the signature and description.
 
-![cron_1_1]({{site.baseurl}}/_posts/cron_1_1.png)
+![cron_1_1](https://raw.githubusercontent.com/monirahmedtanveen/monir.log/master/_posts/cron_1_1.png)
