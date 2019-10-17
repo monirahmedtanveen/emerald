@@ -145,3 +145,12 @@ class SendEmailToUser extends Command
     }
 }
 ```
+
+If you run the following command
+
+```php
+php artisan send:email
+```
+
+You will see the email has been sent to all user and the output shows in the terminal.
+
