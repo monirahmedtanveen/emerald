@@ -23,7 +23,7 @@ The Cron job below will be executed at 6:20 on 10th of every month.
 20 6 10 * * command/to/run
 ```
 
-You can learn more about Cron job on <a href="https://en.wikipedia.org/wiki/Cron" target="_blank"></a>Wikipedia. However, Laravel Cron Job Scheduling makes the whole process very easy.
+You can learn more about Cron job on <a href="https://en.wikipedia.org/wiki/Cron" target="_blank">Wikipedia</a>. However, Laravel Cron Job Scheduling makes the whole process very easy.
 
 ##### Creating New Laravel Project
 
