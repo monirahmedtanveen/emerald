@@ -154,3 +154,4 @@ php artisan send:email
 
 You will see the email has been sent to all user and the output shows in the terminal.
 
+![cron_1_2.png]({{site.baseurl}}/_posts/cron_1_2.png)
