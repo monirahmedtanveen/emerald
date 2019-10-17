@@ -24,3 +24,37 @@ The Cron job below will be executed at 6:20 on 10th of every month.
 ```
 
 You can learn more about Cron job on <a href="https://en.wikipedia.org/wiki/Cron" target="_blank"></a>Wikipedia. However, Laravel Cron Job Scheduling makes the whole process very easy.
+
+##### Creating New Laravel Project
+
+Create a fresh laravel by running the following command on the terminal
+
+```php
+composer create-project --prefer-dist laravel/laravel cron-job
+```
+
+##### Create New Artisan Command
+
+Go to your laravel projects root directory and run the folowing command to create an artisan command.
+
+```php
+php artisan make:command SendEmailToUser
+```
+
+It will creates a class named SendEmailToUser in app\Console\Commands directory. Now edit the SendEmailToUser to create an artisan command.
+
+```php
+/**
+* The name and signature of the console command.
+*
+* @var string
+*/
+protected $signature = 'send:email';
+
+/**
+* The console command description.
+*
+* @var string
+*/
+protected $description = 'Sending a notification email about task to all users';
+```
