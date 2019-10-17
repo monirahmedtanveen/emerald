@@ -155,3 +155,19 @@ php artisan send:email
 You will see the email has been sent to all user and the output shows in the terminal.
 
 ![cron_1_2.png](https://raw.githubusercontent.com/monirahmedtanveen/monir.log/master/_posts/cron_1_2.png)
+
+##### Starting the Laravel Scheduler
+
+Let’s setup the Cron Jobs to run automatically without initiating manually by running the command. To start the Laravel Scheduler itself, we only need to add one Cron job which executes every minute. Go to your terminal, ssh into your server, cd into your project and run this command.
+
+```php
+crontab -e
+```
+
+This will open the server Crontab file, paste the code below into the file, save and then exit.
+
+```php
+* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
+```
+
+Replace the <strong>/path-to-your-project</strong> with the full path to the Artisan command of your Laravel Application.
