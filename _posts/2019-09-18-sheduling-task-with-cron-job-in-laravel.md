@@ -82,3 +82,7 @@ protected function schedule(Schedule $schedule)
         ->everyMinute();    /** Run the task every minute */
 }
 ```
+
+Now, if you run the php artisan list command in the terminal, you will see your command has been registered. You will be able to see the command name with the signature and description.
+
+![cron_1_1]({{site.baseurl}}/_posts/cron_1_1.png)
