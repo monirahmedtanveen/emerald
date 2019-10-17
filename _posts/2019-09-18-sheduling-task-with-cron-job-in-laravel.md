@@ -59,7 +59,7 @@ protected $signature = 'send:email';
 protected $description = 'Sending a notification email about task to all users';
 ```
 
-Now its time to register the 'send:email' command in app\Console\Kernel.php file.
+Now you have to register the command in app\Console\Kernel.php file.
 
 ```php
 /**
@@ -71,4 +71,34 @@ protected $commands = [
    ...
    'App\Console\Commands\SendEmailToUser',
 ];
+```
+
+After that define the command schedule in schedule function of app\Console\Kernel.php file.
+
+```php
+protected function schedule(Schedule $schedule)
+{
+    $schedule->command('send:email')
+        ->everyMinute();    /** Run the task every minute */
+
+        /** Diffrent Scheduling Options */
+        // ->cron('* * * * * *'); 	                /** Run the task on a custom Cron schedule */
+        // ->everyFiveMinutes();                    /** Run the task every five minutes */
+        // ->everyTenMinutes();                     /** Run the task every ten minutes */
+        // ->everyFifteenMinutes();                 /** Run the task every fifteen minutes */
+        // ->everyThirtyMinutes();                  /** Run the task every thirty minutes */
+        // ->hourly();                              /** Run the task every hour */
+        // ->hourlyAt(17);                          /** Run the task every hour at 17 mins past the hour */
+        // ->daily();                               /** Run the task every day at midnight */
+        // ->dailyAt('13:00');                      /** Run the task every day at 13:00 */
+        // ->twiceDaily(1, 13);                     /** Run the task daily at 1:00 & 13:00 */
+        // ->weekly();                              /** Run the task every week */
+        // ->weeklyOn(1, '8:00');                   /** Run the task every week on Tuesday at 8:00 */
+        // ->monthly();                             /** Run the task every month */
+        // ->monthlyOn(4, '15:00');                 /** Run the task every month on the 4th at 15:00 */
+        // ->quarterly();                           /** Run the task every quarter */
+        // ->yearly();                              /** Run the task every year */
+        // ->timezone("America/New_York");          /** Set the timezone */
+
+}
 ```
